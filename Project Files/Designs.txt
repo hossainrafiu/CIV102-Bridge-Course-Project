@@ -1,0 +1,237 @@
+Design 0
+
+xc = [0 786 L];         
+bft = [100 100 100];
+tft = [1.27 1.27 1.27];
+hw = [75 - 2.54 75 - 2.54 75 - 2.54];
+tw = [1.27 1.27 1.27];
+bfb = [80 80 80];      
+tfb = [1.27 1.27 1.27];
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10];
+
+Fails under train load
+Fails under point load of 178 N
+because of mid-flange moment buckling failure
+
+Design 1
+
+xc = [0 786 L];         
+bft = [100 100 100];
+tft = [2.54 2.54 2.54];
+hw = [75 75 75];
+tw = [1.27 1.27 1.27];
+bfb = [80 80 80];      
+tfb = [1.27 1.27 1.27];
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10];
+
+Fails under train load
+Fails under point load of 202 N
+because of mid-flange moment buckling failure
+
+Design 2
+
+xc = [0 786 L];         
+bft = [100 100 100];
+tft = [2.54 2.54 2.54];
+hw = [75 75 75];
+tw = [1.27 1.27 1.27];
+bfb = [80 80 80];      
+tfb = [1.27 2.54 2.54];
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10];
+
+Does not Fail under train load ?
+Fails under point load of 564 N
+because of moment compression failure
+
+Design 3
+
+xc = [0 400 700 800 900 L];         
+bft = [100 100 100 100 100 100];
+tft = [2.54 3.81 2.54 2.54 2.54 2.53];
+hw = [75 75 75 75 75 75];
+tw = [1.27 1.27 1.27 1.27 1.27 1.27];
+bfb = [80 80 80 80 80 80];      
+tfb = [1.27 1.27 1.27 2.54 3.81 3.81];
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load ?
+Fails under point load of 754 N
+because of material shear failure
+
+Design 4
+
+xc = [0 400 700 800 900 1000 L];         
+bft = [100 100 100 100 100 100 100];
+tft = [2.54 3.81 2.54 2.54 2.54 2.54];
+hw = [75 75 75 75 75 75 75];
+tw = [1.27 1.27 1.27 1.27 1.27 2.54 2.54];
+bfb = [80 80 80 80 80 80 80];      
+tfb = [1.27 1.27 1.27 2.54 3.81 3.81 3.81];
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10 10];
+
+Fails under train load
+Fails under point load of 831 N
+because of moment compression failure
+
+Design 5
+
+xc = [0 300 790 1000 L];         
+bft = [100 100 100 100 100];
+tft = [2 3 3 2 2] .* 1.27;
+hw = [75 75 75 75 75];
+tw = [2 2 2 2 2] .* 1.27;
+bfb = [80 80 80 80 80];      
+tfb = [1 1 2 3 3] .* 1.27;
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 831 N
+because of moment compression failure
+
+Design 6
+
+xc = [0 300 790 1000 L];         
+bft = [100 100 100 100 100];
+tft = [2 3 3 2 2] .* 1.27;
+hw = [100 100 100 100 100];
+tw = [1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80];      
+tfb = [1 1 3 3 3] .* 1.27;
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 979 N
+because of moment compression failure
+
+Design 7 (Design 6 with some matboard savings)
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100 100];
+tft = [2 3 2 2 2 2] .* 1.27;
+hw = [100 100 100 100 100 100];
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80 80];
+tfb = [1 1 1 2 3 2] .* 1.27;
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 979 N
+because of moment compression failure ?
+
+Design 8
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 3 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; % 85 is also safe
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80 80];
+tfb = [1 1 1 2 3 2] .* 1.27;
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 853 N
+because of material shear failure
+
+Design 9
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 2 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [70 70 70 70 70];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 535 565 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 750 N
+because of material buckling failure
+
+Design 10
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 2 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [70 70 70 70 70];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 250 535 565 800 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 773 N
+because of moment compression failure
+
+Design 11
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 2 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 250 535 565 800 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 800 N
+because of material buckling failure
+
+Design 12
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 2 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 160 320 535 565 700 900 1045 1075 1235 1265];      
+tt = [10 10 10 10 10 10];
+
+Does not fail under train load
+Fails under point load of 843 N
+because of moment compression failure
+
+Design 13
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 3 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 160 320 535 565 700 900 1045 1075 1235 1265];
+
+Does not fail under train load
+Fails under point load of 853 N
+because of material buckling failure
+
+xc = [0 400 700 800 900 L];
+bft = [100 100 100 100 100];
+tft = [2 2 2 1 1 1] .* 1.27;
+hw = [90 90 90 90 90]; 
+tw = [1 1 1 1 1 1] .* 1.27;
+bfb = [80 80 80 80 80];
+tfb = [1 1 1 2 3 3] .* 1.27;
+apositions = [-15 15 160 320 535 565 700 900 1045 1075 1235 1265];
+
+Does not fail under train load
+Fails under point load of 843 N
+because of moment compression failure
+
+
